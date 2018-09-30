@@ -18,7 +18,7 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod
+ - yarn build --base-href https://petruk1.github.io/travis-example/
 
 
 deploy:
@@ -26,4 +26,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
-  local-dir: branch: master
+  local-dir: ./dist/
+  on:
+  branch: master
